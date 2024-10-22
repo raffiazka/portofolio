@@ -1,0 +1,666 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigasi tetap di atas */
+nav {
+    display: flex;
+    justify-content: end;
+    background-color: #000000;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    align-items: center;
+}
+
+/* Styling untuk teks PORTOFOLIO di kiri */
+.text {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    flex-direction: column; /* Ubah menjadi kolom untuk menampilkan elemen baru di bawahnya */
+    top: 7px;
+}
+
+.text p {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Styling untuk tambahan logo dan teks */
+.extra-logo-text {
+    display: flex;
+    align-items: center;
+    margin-top: 17px; /* Spasi antara PORTOFOLIO dan logo tambahan */
+    color: white;
+    font-size: 18px;
+}
+
+.extra-logo-text i {
+    margin-right: 10px; /* Spasi antara ikon logo dan teks */
+    font-size: 20px;
+}
+
+/* Logo styling */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px;
+    color: white;
+    text-decoration: none; /* Hilangkan garis bawah link */
+    transition: transform 0.3s ease;
+}
+
+.logo i {
+    font-size: 25px;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
+
+/* Teks di bawah logo */
+.hidden-text {
+    margin-top: 9px;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.logo.clicked .hidden-text {
+    opacity: 1;
+}
+
+/* Bagian yang dapat di-scroll */
+section {
+    min-height: 100vh;
+    padding: 100px 20px;
+}
+
+
+
+#home-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Mengatur gambar profil utama */
+.gambar img {
+    position: absolute;
+    left: 12%;
+    bottom: 10rem;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    border: 4px solid rgb(255, 213, 0);
+    margin-left: 7rem;
+}
+
+.gambar img:hover {
+    transform: scale(1.05);  /* Efek zoom saat hover */
+}
+
+/* Mengatur judul utama (HAI) */
+.text1 h1 {
+    margin-left: 45rem;
+    color: #e1e1e1;
+    margin-top: 8rem;
+    font-size: 100px;
+    letter-spacing: 3px;  /* Memberikan spasi antar huruf */
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Efek muncul perlahan */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mengatur teks kedua (Saya RAFFI AZKA) */
+.text2 h1 {
+    margin-left: 45rem;
+    color: white;
+    margin-top: -10px;
+    font-size: 40px;
+    font-weight: bold;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* Mengatur deskripsi tambahan */
+.text3 h4 {
+    margin-left: 45rem;
+    color: #ffffff;
+    margin-top: 10px;
+    font-size: 20px;
+    font-style: italic;
+    animation: fadeInUp 1.4s ease-out;
+}
+
+/* Responsive untuk layar yang lebih kecil */
+@media (max-width: 768px) {
+    .text1 h1, .text2 h1, .text3 h4 {
+        margin-left: 2rem;
+        text-align: left;
+    }
+
+    .container {
+        flex-direction: column;
+        margin-left: 2rem;
+    }
+
+    .gambar img {
+        left: 10%;
+        width: 20rem;
+        height: 18rem;
+    }
+}
+
+
+
+
+/*               */
+
+/* Styling untuk container social media */
+
+.social-icons {
+    display: flex;
+    justify-content: end;
+    gap: 20px;  /* Jarak antar ikon */
+    margin-top: 20px;
+    margin-right: 10rem;
+}
+
+.social-icons .icon {
+    font-size: 40px;
+    color: #333;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.social-icons .icon:active {
+    transform: scale(0.9);  /* Animasi mengecil saat ditekan */
+}
+
+.social-icons .icon:hover {
+    color: #007bff;  /* Ubah warna saat hover */
+}
+
+/* TikTok warna khusus */
+.icon.tiktok {
+    color: #ffffff;
+}
+
+.icon.tiktok:hover {
+    color: #69C9D0;
+}
+
+/* Instagram warna khusus */
+.icon.instagram {
+    color: #E1306C;
+}
+
+.icon.instagram:hover {
+    color: #FFDC80;
+}
+
+/* Discord warna khusus */
+.icon.email {
+    color: grey;
+}
+
+.icon.email:hover {
+    color: red;
+}
+
+.icon.phone:hover {
+    color: #62ff00;
+}
+
+
+/* Profil Section */
+section#profil-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Menyelaraskan konten secara horizontal */
+    justify-content: center; /* Menyelaraskan konten secara vertikal */
+    text-align: center;
+}
+
+/* Container utama yang mengandung gambar dan detail profil */
+.container {
+    display: flex; 
+    justify-content: center; /* Menyelaraskan gambar dan teks di tengah */
+    align-items: flex-start; /* Menyelaraskan secara vertikal di bagian atas */
+    gap: 30px; /* Jarak antara gambar dan teks */
+    margin-bottom: 30px;
+    max-width: 800px; /* Batas lebar maksimum untuk kontainer */
+    width: 100%; /* Memastikan kontainer mengambil lebar penuh */
+}
+
+/* Styling untuk gambar profil */
+.profile-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    border: 4px solid #333; /* Border di sekitar gambar */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
+}
+
+/* Box profil pribadi */
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Menyelaraskan teks di sebelah kiri */
+}
+
+.profile-details h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: #333;
+}
+
+.profile-box {
+    background-color: #021526;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px #021526;
+    width: 800px; /* Lebar tetap untuk box */
+    height: 300px;
+}
+
+/* Styling untuk paragraf di dalam box */
+.profile-box p {
+    font-size: 25px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+/* Box jurusan di bawah gambar dan teks profil */
+.jurusan-box {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center; /* Teks jurusan berada di tengah */
+    width: 300px; /* Lebar tetap untuk box jurusan */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.jurusan-box h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.containerjurusan{
+    margin-right: -46rem;
+    top: -25rem;
+}
+
+
+/* Section Pendidikan */
+section#pendidikan-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+    background-color: #021526;
+}
+
+
+
+/* Garis vertikal */
+.vertical-line {
+    width: 4px;
+    background-color: #ffee00;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Item pendidikan (untuk box + logo) */
+.education-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+/* Posisi item di kanan */
+.education-item.right {
+    justify-content: flex-start;
+    margin-right: 17rem;
+}
+
+/* Posisi item di kiri */
+.education-item.left {
+    justify-content: flex-end;
+    margin-left:17rem;
+}
+
+/* Box pendidikan dengan gambar dan teks di samping */
+.education-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 5px 2px 3px red;
+    width: 28rem;
+    text-align: left;
+    display: flex;  /* Tata letak horizontal */
+    align-items: center;
+    gap: 20px;  /* Jarak antara gambar dan teks */
+    
+    
+}
+
+/* Styling khusus untuk box kiri (gambar di kanan) */
+.education-item.left .education-box {
+    flex-direction: row-reverse;  /* Membalik tata letak gambar dan teks */
+}
+
+/* Foto sekolah */
+.school-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Detail sekolah (teks di samping gambar) */
+.school-details h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.school-details-left{
+    text-align: end;
+}
+
+.school-details p {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Logo sekolah (di luar box) */
+.school-logo img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100rem;
+    box-shadow: 0 4px 10px yellow;
+    background-color: white;
+    border: 4px  solid yellow;
+    
+}
+
+
+
+/* Logo di kanan (untuk item kanan) */
+.education-item.right .school-logo {
+    margin-left: 20px;
+}
+
+/* Logo di kiri (untuk item kiri) */
+.education-item.left .school-logo {
+    margin-right: 20px;
+    
+}
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Judul PENDIDIKAN */
+.nama {
+    position: absolute;
+    top: -50px; /* Mengatur posisi nama di atas garis */
+    z-index: 1; /* Pastikan elemen berada di depan garis */
+    background-color: #021526; /* Sesuaikan dengan background */
+    padding: 10px 20px;
+    border-radius: 5px;
+
+}
+
+.nama h1 {
+    font-size: 36px;
+    color: #ffee00;
+}
+
+
+#home-section {
+    background-color: #021526;
+}
+
+#profil-section {
+    background-color: #ffeb3b;
+} 
+
+#pendidikan-section {
+    background-color: #ffeb3b;
+}
+
+
+
+#prestasi-section {
+    background-color: #ffc107;
+}
+
+#project-section {
+    background-color: #021526;
+}
+
+.projek{
+   margin-right: 1rem;
+}
+
+.boxprojek { 
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Menyusun konten secara vertikal */
+    align-items: center;
+    justify-content: flex-start; /* Konten mulai dari atas */
+    width: 400px;
+    height: 550px; /* Menambah tinggi untuk ruang tambahan */
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 4px 5px 5px #ffeb3b;
+    padding: 20px; /* Menambahkan padding untuk ruang */
+    margin-left: 2rem;
+   
+}
+
+.boxprojek h4{
+    text-align: center;
+}
+
+.boxprojek h2{
+    padding: 10px;
+}
+
+
+/* Styling for main image (di atas teks) */
+.boxprojek img {
+    width: 20rem;
+    height: 15rem;
+    border-radius: 5px;
+    object-fit: cover; /* Mengisi gambar sesuai kontainer tanpa merusak aspek rasio */
+    margin-bottom: 10px;
+}
+
+.extra-images {
+    display: flex;
+    justify-content: center; /* Memusatkan gambar tambahan */
+    gap: 10px; /* Memberikan jarak antar gambar */
+   padding: 20px;
+}
+
+/* Styling for extra images */
+.extra-images img {
+    width: 60px; /* Lebar seragam untuk semua gambar tambahan */
+    height: 60px; /* Tinggi seragam untuk semua gambar tambahan */
+    border-radius: 5px;
+    object-fit: cover; /* Mengisi gambar sesuai kontainer */
+    flex-shrink: 0; /* Mencegah gambar menyusut */
+   
+}
+
+/* Container for the sidebox */
+.sidebox {
+    display: flex;
+   
+}
+
+
+
+
+
+/* Container utama */
+.prestasi-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+/* Judul PRESTASI */
+.nama {
+    position: absolute;
+    top: -50px; /* Mengatur posisi nama di atas sidebox */
+    z-index: 1;
+    background-color: #021526; /* Sesuaikan dengan background */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.nama h1 {
+    font-size: 36px;
+    color: #ffee00;
+}
+
+/* Container sidebox */
+.sidebox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Menambah jarak antara boxprestasi */
+    margin-top: 5rem;
+}
+
+/* Box prestasi styling */
+.boxprestasi {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Menyusun konten secara vertikal */
+    align-items: center;
+    justify-content: flex-start; /* Konten mulai dari atas */
+    width: 23rem;
+    height: 22rem;
+    border-radius: 5px;
+    box-shadow: 4px 7px 5px #021526;
+    padding: 20px;
+}
+
+/* Styling untuk gambar */
+.boxprestasi img {
+    width: 20rem;
+    height: 15rem;
+    object-fit: cover; /* Untuk memastikan gambar tetap proporsional */
+    border-radius: 5px;
+}
+
+/* Judul prestasi */
+.boxprestasi h2 {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #021526;
+}
+
+.namaporjek {
+    position: absolute;
+    top: -50px; /* Mengatur posisi nama di atas sidebox */
+    z-index: 1;
+    background-color: #021526; /* Sesuaikan dengan background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    left: 20rem;
+}
+
+.namaprojek h1 {
+    font-size: 36px;
+    color: #ffee00;
+}
+
+
+/* Atur body dan html untuk memaksimalkan tinggi */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Memastikan elemen mengambil 100% tinggi */
+}
+
+#contact-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Min-height 100% viewport height */
+    justify-content: flex-end; /* Memastikan footer berada di bagian bawah */
+}
+
+.social-icons2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;  /* Jarak antar ikon */
+    margin-top: 20px;
+    padding: 4rem;
+}
+
+.social-icons2 .icon {
+    font-size: 50px;
+    color: #333;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
